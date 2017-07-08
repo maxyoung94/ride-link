@@ -1,0 +1,11 @@
+{
+  "name": "ride-link",
+  "version": "1.0.0",
+  "description": "an online web service that helps you maintain your vehicles functionality",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max",
+  "license": "MIT"
+}

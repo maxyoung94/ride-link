@@ -11,3 +11,9 @@ use 'RenderDOM.render()' to mount a 'h1' hello world to the DOM
 install express, save it to packages.json, create webapp.js to 
 contain the express.js source code, write simple express code 
 to serve files from 'static' dir.
+
+## Step 2: Server-Side Babel
+
+### 2.1 split the files
+create a App.js, move the js from index.html to app.js, create src dir
+to hold compiled App.js, run babel script with --watch to compile on save

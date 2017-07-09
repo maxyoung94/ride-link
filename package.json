@@ -9,6 +9,7 @@
   "author": "Max",
   "license": "MIT",
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
     "express": "^4.15.3"
   },
   "devDependencies": {},

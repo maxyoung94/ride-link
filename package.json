@@ -2,10 +2,22 @@
   "name": "ride-link",
   "version": "1.0.0",
   "description": "an online web service that helps you maintain your vehicles functionality",
-  "main": "App.js",
+  "main": "webapp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Max",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxyoung94/ride-link.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxyoung94/ride-link/issues"
+  },
+  "homepage": "https://github.com/maxyoung94/ride-link#readme"
 }

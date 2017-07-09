@@ -17,3 +17,14 @@ to serve files from 'static' dir.
 ### 2.1 split the files
 create a App.js, move the js from index.html to app.js, create src dir
 to hold compiled App.js, run babel script with --watch to compile on save
+
+## Step 3: Compose Components
+
+### 3.1 use React.createClass()
+make a ServiceList component, this component should list all the services history
+a car has. use React.createClass(object)
+
+### 3.2 Compose Components
+make ServiceTable, ServiceFilter, ServiceAdd to display placeholder text for now.
+The table will contain the rows of data, Add will be a section for adding new items,
+and filter will be for finding specific service entries.

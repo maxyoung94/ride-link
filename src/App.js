@@ -1,4 +1,14 @@
+var ServiceList = React.createClass({
+
+	render: function() {
+		return (
+			<div>This is the service list component.</div>
+		);
+	}
+
+});
+
 ReactDOM.render(
-	<h1>Hello, Max!</h1>,
+	<ServiceList />,
 	document.getElementById('main')
 );

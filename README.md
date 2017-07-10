@@ -28,3 +28,9 @@ a car has. use React.createClass(object)
 make ServiceTable, ServiceFilter, ServiceAdd to display placeholder text for now.
 The table will contain the rows of data, Add will be a section for adding new items,
 and filter will be for finding specific service entries.
+
+### 3.3 Communicate Between Components
+Create a ServiceRow component to display a '<tr>' and children elements as well as
+using '{this.props.whatever}' in '<td>', we then call '<ServiceRow />' twice in
+ServiceTable, passing in data using 'id="{1}"' syntax, 1 is surrounded because it is a integer
+and JSX gets confused, wrap it in JSX tags for it to output a string literal, i think?

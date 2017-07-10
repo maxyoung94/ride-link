@@ -12,7 +12,7 @@ var ServiceList = React.createClass({
 				'Service History List'
 			),
 			React.createElement(ServiceFilter, null),
-			React.createElement(ServiceTable, null),
+			React.createElement(ServiceTable, { services: dataList }),
 			React.createElement(ServiceAdd, null)
 		);
 	}
@@ -31,10 +31,50 @@ var ServiceFilter = React.createClass({
 	}
 });
 
+var ServiceRow = React.createClass({
+	displayName: 'ServiceRow',
+
+
+	render: function () {
+		return React.createElement(
+			'tr',
+			null,
+			React.createElement(
+				'td',
+				null,
+				this.props.service.id
+			),
+			React.createElement(
+				'td',
+				null,
+				this.props.service.title
+			),
+			React.createElement(
+				'td',
+				null,
+				this.props.service.date
+			),
+			React.createElement(
+				'td',
+				null,
+				this.props.service.author
+			),
+			React.createElement(
+				'td',
+				null,
+				this.props.service.category
+			)
+		);
+	}
+});
+
 var ServiceTable = React.createClass({
 	displayName: 'ServiceTable',
 
 	render: function () {
+		var serviceRows = this.props.services.map(function (service) {
+			return React.createElement(ServiceRow, { key: service.id, service: service });
+		});
 		return React.createElement(
 			'table',
 			null,
@@ -74,8 +114,7 @@ var ServiceTable = React.createClass({
 			React.createElement(
 				'tbody',
 				null,
-				React.createElement(ServiceRow, { id: 1, title: 'this is the first title', date: '07/02/17', author: 'Max Young', category: 'Steering & Suspension' }),
-				React.createElement(ServiceRow, { id: 2, title: 'this is the second title', date: '07/04/17', author: 'Max Young', category: 'Engine Performance' })
+				serviceRows
 			)
 		);
 	}
@@ -93,41 +132,18 @@ var ServiceAdd = React.createClass({
 	}
 });
 
-var ServiceRow = React.createClass({
-	displayName: 'ServiceRow',
-
-
-	render: function () {
-		return React.createElement(
-			'tr',
-			null,
-			React.createElement(
-				'td',
-				null,
-				this.props.id
-			),
-			React.createElement(
-				'td',
-				null,
-				this.props.title
-			),
-			React.createElement(
-				'td',
-				null,
-				this.props.date
-			),
-			React.createElement(
-				'td',
-				null,
-				this.props.author
-			),
-			React.createElement(
-				'td',
-				null,
-				this.props.category
-			)
-		);
-	}
-});
+var dataList = [{
+	id: 1,
+	title: 'Complete Brake Overhaul',
+	date: '10/10/10',
+	author: 'Max Young',
+	category: 'Brakes'
+}, {
+	id: 2,
+	title: 'Oil Change',
+	date: '12/10/10',
+	author: 'Max Young',
+	category: 'General Maintence'
+}];
 
 ReactDOM.render(React.createElement(ServiceList, null), document.getElementById('main'));

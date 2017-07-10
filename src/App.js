@@ -5,7 +5,7 @@ var ServiceList = React.createClass({
 			<div>
 				<h1>Service History List</h1>
 				<ServiceFilter />
-				<ServiceTable />
+				<ServiceTable services={dataList}/>
 				<ServiceAdd />
 			</div>
 		);
@@ -21,8 +21,26 @@ var ServiceFilter = React.createClass({
 	}
 });
 
+var ServiceRow = React.createClass({
+	
+	render: function() {
+		return (
+			<tr>
+				<td>{this.props.service.id}</td>
+				<td>{this.props.service.title}</td>
+				<td>{this.props.service.date}</td>
+				<td>{this.props.service.author}</td>
+				<td>{this.props.service.category}</td>
+			</tr>				
+		)
+	}
+});
+
 var ServiceTable = React.createClass({
 	render: function() {
+		var serviceRows = this.props.services.map(function(service){
+			return <ServiceRow key={service.id} service={service} />
+		})
 		return (
 			<table>
 				<thead>
@@ -35,8 +53,7 @@ var ServiceTable = React.createClass({
 					</tr>
 				</thead>
 				<tbody>
-					<ServiceRow id={1} title='this is the first title' date='07/02/17' author='Max Young' category='Steering & Suspension'/>
-					<ServiceRow id={2} title='this is the second title' date='07/04/17' author='Max Young' category='Engine Performance'/>
+					{serviceRows}
 				</tbody>
 			</table>
 		)
@@ -51,20 +68,22 @@ var ServiceAdd = React.createClass({
 	}
 });
 
-var ServiceRow = React.createClass({
-	
-	render: function() {
-		return (
-			<tr>
-				<td>{this.props.id}</td>
-				<td>{this.props.title}</td>
-				<td>{this.props.date}</td>
-				<td>{this.props.author}</td>
-				<td>{this.props.category}</td>
-			</tr>				
-		)
+var dataList = [
+	{		
+		id: 1,
+		title: 'Complete Brake Overhaul',
+		date: '10/10/10',
+		author: 'Max Young',
+		category: 'Brakes'
+	},
+	{		
+		id: 2,
+		title: 'Oil Change',
+		date: '12/10/10',
+		author: 'Max Young',
+		category: 'General Maintence'
 	}
-});
+];
 
 ReactDOM.render(
 	<ServiceList />,

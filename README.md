@@ -34,3 +34,10 @@ Create a ServiceRow component to display a '<tr>' and children elements as well 
 using '{this.props.whatever}' in '<td>', we then call '<ServiceRow />' twice in
 ServiceTable, passing in data using 'id="{1}"' syntax, 1 is surrounded because it is a integer
 and JSX gets confused, wrap it in JSX tags for it to output a string literal, i think?
+
+### 3.4 Dynamic Composition
+Create a global array of service objects.
+In ServiceList, when calling ServiceTable, pass in the global array as a prop called 'services'.
+In ServiceTable, use .map to create an array of ServiceRows, using service as the object 
+handle, specify a key={service.id} and pass the single service object with 'service={service}'
+In 'tbody', insert the list of service rows by using the JSX expression: {serviceRows}

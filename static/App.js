@@ -1,7 +1,9 @@
 var ServiceList = React.createClass({
 	displayName: 'ServiceList',
 
-
+	getInitialState: function () {
+		return { services: dataList };
+	},
 	render: function () {
 		return React.createElement(
 			'div',
@@ -12,8 +14,15 @@ var ServiceList = React.createClass({
 				'Service History List'
 			),
 			React.createElement(ServiceFilter, null),
-			React.createElement(ServiceTable, { services: dataList }),
-			React.createElement(ServiceAdd, null)
+			React.createElement(ServiceTable, { services: this.state.services }),
+			React.createElement(ServiceAdd, null),
+			React.createElement(
+				'button',
+				{ onClick: () => function () {
+						console.log("it worked");
+					} },
+				'TEST'
+			)
 		);
 	}
 

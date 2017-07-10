@@ -41,3 +41,13 @@ In ServiceList, when calling ServiceTable, pass in the global array as a prop ca
 In ServiceTable, use .map to create an array of ServiceRows, using service as the object 
 handle, specify a key={service.id} and pass the single service object with 'service={service}'
 In 'tbody', insert the list of service rows by using the JSX expression: {serviceRows}
+
+## Step 4: Dynamic Updates
+
+### 4.1 Create Initial State
+add 'getInitialState' to ServiceList and return an object with 'services: dataList'
+where using props before, replace with 'self.state.services'
+
+# Abandoned, decided to just start Reacts tutorial as i keep finding this Hashnode one using a lot 
+of deprecated tutorials and methods, loved the reflection format built around GitHub and will 
+try to follow that proceedure in following repos.

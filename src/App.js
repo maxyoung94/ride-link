@@ -1,12 +1,17 @@
 var ServiceList = React.createClass({
-
+	getInitialState: function() {
+		return (
+			{services: dataList}
+		)
+	},
 	render: function() {
 		return (
 			<div>
 				<h1>Service History List</h1>
 				<ServiceFilter />
-				<ServiceTable services={dataList}/>
+				<ServiceTable services={this.state.services}/>
 				<ServiceAdd />
+				<button onClick={() => function(){console.log("it worked")}}>TEST</button>
 			</div>
 		);
 	}
